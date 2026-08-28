@@ -22,4 +22,12 @@ public class StatsService {
         }
         return sorted[n / 2];
     }
+
+    public double calculateVariance(List<Double> numbers) {
+        double mean = calculateMean(numbers);
+        return numbers.stream()
+                .mapToDouble(x -> Math.pow(x - mean, 2))
+                .average()
+                .orElse(0.0);
+    }
 }
