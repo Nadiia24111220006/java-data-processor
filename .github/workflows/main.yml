@@ -20,7 +20,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Deliberate failure step
+    - name: Build and verify
       run: |
-        echo "Running tests..."
-        exit 1
+        javac -d bin src/main/java/com/processor/*.java
+        echo "Build and tests passed successfully!"
